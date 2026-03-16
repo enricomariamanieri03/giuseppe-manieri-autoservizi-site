@@ -1,5 +1,6 @@
 # Giuseppe Manieri Autoservizi
 
+<<<<<<< HEAD
 ## Netlify Forms (email notifications)
 1. Pubblica il sito su Netlify con il build `npm run build` e `publish: dist`.
 2. In Netlify vai su `Site settings` → `Forms` → `Form notifications`.
@@ -12,3 +13,20 @@
 3. Copia i nameserver Netlify assegnati.
 4. Nel pannello Aruba aggiorna i nameserver del dominio con quelli di Netlify.
 5. Attendi la propagazione DNS e verifica l'HTTPS attivo su Netlify.
+=======
+Sito ufficiale di Giuseppe Manieri Autoservizi.
+
+## Tecnologie
+- HTML
+- CSS
+- JavaScript
+- Netlify
+
+## Build
+
+npm run build
+
+## Deploy
+
+Il sito è deployato automaticamente tramite Netlify collegato a GitHub.
+>>>>>>> 7ff9877f40cc6fad74790a5e3a60213b5b957a7d
