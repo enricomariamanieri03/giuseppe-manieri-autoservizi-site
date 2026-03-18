@@ -329,14 +329,16 @@ a {
   top: 0;
   right: 0;
   width: min(320px, 86vw);
-  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
   background: #ffffff;
   box-shadow: -18px 0 42px rgba(15, 23, 42, 0.16);
   transform: translateX(100%);
   transition: transform 0.28s ease;
   z-index: 1101;
-  padding: 24px 22px 32px;
+  padding: calc(24px + env(safe-area-inset-top, 0px)) 22px calc(32px + env(safe-area-inset-bottom, 0px));
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .mobile-nav-links {
@@ -366,7 +368,7 @@ a {
   align-items: center;
   gap: 26px;
   width: 100%;
-  padding: 16px 10px 8px;
+  padding: 16px 10px calc(18px + env(safe-area-inset-bottom, 0px));
 }
 
 .mobile-nav-quick-actions {
@@ -945,7 +947,7 @@ body.mobile-nav-open .mobile-nav-panel {
 
 .about-home + .section .container {
   width: min(1120px, 90vw);
-  padding: 0 28px;
+  padding-inline: 28px;
 }
 
 .about-home + .section {
@@ -1048,7 +1050,12 @@ body.mobile-nav-open .mobile-nav-panel {
   }
 
   .about-home + .section .container {
-    padding: 0;
+    padding-inline: 20px;
+  }
+
+  .about-home + .section {
+    padding-top: 42px;
+    padding-bottom: 56px;
   }
 
   .about-home-media {
@@ -2348,8 +2355,32 @@ body[data-route="preventivo"] .btn-primary {
 
 @media (max-width: 720px) {
   .cta-box {
+    min-height: auto;
+    padding: 30px 20px 28px;
+    border-radius: 28px;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .cta-box > div {
+    width: 100%;
+  }
+
+  .cta-box h3 {
+    margin: 0 0 8px;
+  }
+
+  .cta-box .muted {
+    display: block;
+  }
+
+  .cta-box .btn {
+    width: auto;
+    min-height: auto;
+    padding: 12px 22px;
+    align-self: flex-start;
   }
 
   .hero-actions {
